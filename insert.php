@@ -14,7 +14,7 @@ if(isset($_POST['btn'])) {
     }
 }
 foreach($array as $item) {
-    mysqli_query($db,"INSERT INTO `nemadid` (`Nid`,`Nname`)
+    mysqli_query($db,"INSERT INTO `nemadid` (`nid`,`nname`)
             VALUES('{$item[0]}','{$item[1]}')");
 }
 ?>
