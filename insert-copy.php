@@ -10,8 +10,9 @@ if (isset($_POST['btn2']))
     foreach( $xlsx->rows() as $items) {
         $j = 0;
         foreach($items as $item) {
-            
-            if($item == "") {
+            $item = (string)$item;
+           if($item == null) 
+            {
                 continue;
             }
             $resArray[$i][$j] = $item;
