@@ -10,6 +10,7 @@ if (isset($_POST['btn2']))
     foreach( $xlsx->rows() as $items) {
         $j = 0;
         foreach($items as $item) {
+            
             if($item == "") {
                 continue;
             }
@@ -18,11 +19,14 @@ if (isset($_POST['btn2']))
         }
         $i++;
     }
-    array_shift($resArray);
+   array_shift($resArray);
     echo "<pre>";
     print_r($resArray);
     echo "</pre>";
-
+   
+    foreach ($resArray as $item) 
+    {
     mysqli_query($db, "INSERT INTO `boorsupl`(`nemadid`, `volume`, `value`, `endprice`, `endperc`, `priceend`, `endchange`, `min`, `max`, `inoutpric`, `dist3mon`, `powerbyue`) VALUES
     ('{$item[0]}','{$item[1]}','{$item[2]}','{$item[3]}','{$item[4]}','{$item[5]}','{$item[6]}','{$item[7]}','{$item[8]}','{$item[9]}','{$item[10]}','{$item[11]}')");
+    }
 }
