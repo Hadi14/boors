@@ -13,15 +13,16 @@ if (isset($_POST['btn2']))
         list($cols,) = $xlsx->dimension();
         foreach ($xlsx->rows() as $k => $r)
          {
-            if ($k == 0) continue; // skip first row
+           if ($k == 0) continue; // skip first row
             for ($i = 1; $i <= $cols; $i++) 
             {
                 if ($r[1] != "" && $i <= 4)
                 {
                     $array[$k] = $r;
+                   //echo $r." ";
                 }
                 //$i++;
-                echo $i." ";
+               // echo $r." ";
             }
         }
 
@@ -29,8 +30,9 @@ if (isset($_POST['btn2']))
 
         foreach ($array as $item) 
         {
-            mysqli_query($db, "INSERT INTO `boorsupl`(`nemadid`, `volume`, `value`, `endprice`, `endperc`, `priceend`, `endchange`, `min`, `max`, `inoutpric`, `dist3mon`, `powerbyue`) VALUES
-             ('{$item[0]}','{$item[1]}','{$item[2]}','{$item[3]}','{$item[4]}','{$item[5]}','{$item[6]}','{$item[7]}','{$item[8]}','{$item[9]}','{$item[10]}','{$item[11]}')");
+           // mysqli_query($db, "INSERT INTO `boorsupl`(`nemadid`, `volume`, `value`, `endprice`, `endperc`, `priceend`, `endchange`, `min`, `max`, `inoutpric`, `dist3mon`, `powerbyue`) VALUES
+             //('{$item[0]}','{$item[1]}','{$item[2]}','{$item[3]}','{$item[4]}','{$item[5]}','{$item[6]}','{$item[7]}','{$item[8]}','{$item[9]}','{$item[10]}','{$item[11]}')");
+             echo $item;
         }
     }
 }
