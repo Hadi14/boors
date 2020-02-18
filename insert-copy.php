@@ -21,9 +21,9 @@ if (isset($_POST['btn2']))
         $i++;
     }
    array_shift($resArray);
-    echo "<pre>";
+   /* echo "<pre>";
     print_r($resArray);
-    echo "</pre>";
+    echo "</pre>";*/
    
     foreach ($resArray as $item) 
     {
