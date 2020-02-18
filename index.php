@@ -25,7 +25,7 @@ if (isset($_POST['nid']) && isset($_POST['nname']))
  {
     $nid =  $_POST['nid']; 
     $nname =  $_POST['nname'];
-    echo   $nid."  ".  $nname;
+   // echo   $nid."  ".  $nname;
 
     mysqli_query($db,"INSERT INTO `nemad`(`nemadid`, `namadname`) VALUES ('$nid','$nname')");
  }
